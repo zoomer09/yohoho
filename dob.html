@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Date of Birth</title>
-  <style>
-    body { background:#ffe4e1; font-family:'Comic Sans MS',sans-serif; text-align:center; margin-top:10%; }
-    input { padding:10px; font-size:16px; border-radius:8px; border:1px solid #ccc; }
-    button { padding:10px 20px; border:none; border-radius:8px; background:#ff1493; color:white; font-size:16px; cursor:pointer; margin-left:10px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Date of Birth</title>
+<style>
+body {
+  background-color: pink;
+  font-family: "Comic Sans MS", cursive;
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+}
+input, button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+}
+button {
+  background-color: white;
+  color: hotpink;
+  cursor: pointer;
+}
+</style>
 </head>
 <body>
-  <h2>Hey <span id="displayName"></span> 👋</h2>
-  <p>Please enter ur date of birth 🎂</p>
-  <input type="date" id="dobBox" />
+  <h1>Now enter your date of birth 🎂</h1>
+  <input type="date" id="dob"><br><br>
   <button onclick="nextPage()">Next ➡️</button>
 
-  <script>
-    document.getElementById('displayName').innerText = localStorage.getItem('username') || 'friend';
-    function nextPage() {
-      const dob = document.getElementById('dobBox').value;
-      localStorage.setItem('dob', dob);
-      window.location.href = 'birthday.html';
-    }
-  </script>
+<script>
+function nextPage(){
+  localStorage.setItem("dob", document.getElementById("dob").value);
+  localStorage.setItem("playMusic", "true");
+  window.location.href = "birthday.html";
+}
+</script>
 </body>
 </html>
